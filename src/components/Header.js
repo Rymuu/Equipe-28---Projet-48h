@@ -15,11 +15,11 @@ const Header = () => {
             <Nav.Link href="login">Login</Nav.Link>
             <Nav.Link href="register">Register</Nav.Link>
             <NavDropdown title="Organiser" id="nav-dropdown">
-              <NavDropdown.Item eventKey="4.1">créer</NavDropdown.Item>
-              <NavDropdown.Item eventKey="4.2">Another action</NavDropdown.Item>
-              <NavDropdown.Item eventKey="4.3">Something else here</NavDropdown.Item>
+              <NavDropdown.Item eventKey="4.1">créer un évènement</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item eventKey="4.4">Separated link</NavDropdown.Item>
+              <NavDropdown.Item eventKey="4.2">Valider des participants</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item eventKey="4.3">Moderation des participants</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Container>
