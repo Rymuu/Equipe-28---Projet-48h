@@ -20,7 +20,7 @@ const Index = () => {
     if(response.data.error) {
     } else {
       localStorage.setItem('jwt', response.data.jwt);
-      router.push("/profil")
+      router.push("/")
     }
     console.log('User profile', response.data.user);
     

@@ -21,6 +21,7 @@ const Index = () => {
       console.log('User token', response.data.jwt);
       localStorage.setItem("jwt", response.data.jwt);
       console.log("success !");
+      router.push("/");
       
     
     })
