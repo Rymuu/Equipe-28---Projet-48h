@@ -1,53 +1,64 @@
-import React, {useState} from 'react';
-import Input from '../../components/Input';
-import userService from '../../services/product.service';
+import React, { useState } from "react";
+import Input from "../../components/Input";
 import Button from "../../components/Button";
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
+import axios from "axios";
 
 const Index = () => {
-  
-  const [user, setUser] = useState();
 
   const router = useRouter();
-
+  const [user, setUser] = useState();
   const submitLogin = (e) => {
-    e.preventDefault();
-    userService.login(user)
-			.then((data) => { 
-				console.log(data);
-        localStorage.setItem('token', data.jwt);
-        router.push('/profil')
-      })
-      .catch(err => console.log(err))
-  }
-
+    axios
+    .post('http://localhost:1337/api/auth/local', {
+      identifier: user.username,
+      password: user.password,
+    })
+    .then(response => {
+      // Handle success.
+      console.log(e);
+      console.log('User profile', response.data.user);
+      console.log('User token', response.data.jwt);
+      localStorage.setItem("jwt", response.data.jwt);
+      console.log("success !");
+      
+    
+    })
+    .catch(error => {
+      // Handle error.
+      console.log('An error occurred:', error.response);
+    });
+    e.preventDefault(); 
+  
+    }
   return (
-		<div className="page__login">
-			<form className="form" onSubmit={(e) => submitLogin(e)}>
-				<Input
-					type="email"
-					label="Email"
-					placeholder="Veuillez saisir votre adresse email"
-					name="email"
-					id="email"
-					required={true}
-					classes="form__input"
-					handleChange={(e) => setUser({ ...user, identifier: e.target.value })}
-				/>
-				<Input
-					type="password"
-					label="Password"
-					placeholder="Veuillez saisir votre mot de passe"
-					name="password"
-					id="password"
-					required={true}
-					classes="form__input"
-					handleChange={(e) => setUser({ ...user, password: e.target.value })}
-				/>
-				<Button title="envoyer" classes="btn btn__color-black" type="submit" />
-			</form>
-		</div>
-	);
-}
+    <div className="page__login">
+      <form className="form" onSubmit={(e)=> submitLogin(e)}>
+
+          <Input
+          label="Identifiant"
+          name="username"
+          id="username"
+          type="text"
+          classes="form__input"
+          required={true}
+          placeholder="Veuillez saisir votre identifiant"
+          handleChange={(e) => setUser({...user, username : e.target.value})}
+              />
+          <Input
+          label="Mot de passe"
+          name="password"
+          id="password"
+          type="password"
+          classes="form__input"
+          required={true}
+          placeholder="Veuillez saisir votre mot de passe"
+          handleChange={(e) => setUser({...user, password : e.target.value})}
+              />
+        <Button title="envoyer" classes="btn btn__color-black" type="submit"/>
+      </form>
+    </div>
+  );
+};
 
 export default Index;

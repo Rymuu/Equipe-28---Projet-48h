@@ -1,9 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default function Home() {
+const Index = () => {
+
   return (
-    <div className="page__home">
-      <p>admin page</p>
+    <div className="page__admin">
+     
     </div>
-  )
-}
+  );
+};
+
+export default Index;
