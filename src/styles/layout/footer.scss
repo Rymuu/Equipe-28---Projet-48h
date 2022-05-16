@@ -1,0 +1,23 @@
+.footer {
+    z-index: 2;
+    &__main {
+        
+        position: inherit;
+        padding: 20px;
+        background: rgb(240 247 255);
+    }
+}
+
+.text {
+    &__center {
+        text-align: center;
+    }
+    
+    &__right {
+        text-align: right;
+    }
+
+    &__left {
+        text-align: left;
+    }
+}
