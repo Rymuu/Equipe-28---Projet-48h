@@ -12,15 +12,16 @@ const Header = () => {
             <Nav.Link href="home">Home</Nav.Link>
             <Nav.Link href="event">Event</Nav.Link>
             <Nav.Link href="admin">Admin</Nav.Link>
+            <NavDropdown title="Events" id="nav-dropdown">
+              <NavDropdown.Item eventKey="4.1">Create an event</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item eventKey="4.2">My events</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+          <Nav className="justify-content-end flex-grow-1 pe-3">
             <Nav.Link href="login">Login</Nav.Link>
             <Nav.Link href="register">Register</Nav.Link>
-            <NavDropdown title="Organiser" id="nav-dropdown">
-              <NavDropdown.Item eventKey="4.1">créer un évènement</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item eventKey="4.2">Valider des participants</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item eventKey="4.3">Moderation des participants</NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link href="register">Account</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
