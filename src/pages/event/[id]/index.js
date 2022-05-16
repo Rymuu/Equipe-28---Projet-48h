@@ -21,8 +21,12 @@ const Index = () => {
 
   return (
     <div className="event_page">
-      <p>{event && event.attributes.title}</p>
+      <div>
+        
 
+      </div>
+      <p>{event && event.attributes.title}</p>
+      
       <div className="text__center">
         <p>{event && event.attributes.description}</p>
         <Button

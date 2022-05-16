@@ -44,7 +44,7 @@ const Header = () => {
             <Nav.Link href="/event">Event</Nav.Link>
             <Nav.Link href="/admin">Admin</Nav.Link>
             <NavDropdown title="Events" id="nav-dropdown">
-              <NavDropdown.Item eventKey="4.1">Create an event</NavDropdown.Item>
+              <NavDropdown.Item eventKey="4.1" href="/new-event">Create an event</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item eventKey="4.2">My events</NavDropdown.Item>
             </NavDropdown>

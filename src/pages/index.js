@@ -4,7 +4,7 @@ import Card from '../components/Card';
 import eventService from '../services/event.service';
 
 export default function Home() {
-  const [events, setEvents] = useState();
+  const [events, setEvents, users] = useState();
 
   useEffect(() => {
     eventService.getEvents()
@@ -17,7 +17,6 @@ export default function Home() {
 
   return (
     <div className="page__home">
-      <h1></h1>
        <div className="events__grid">
         {events &&
           events.map((event) => (
