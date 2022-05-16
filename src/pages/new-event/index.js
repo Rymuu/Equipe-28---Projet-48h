@@ -13,7 +13,6 @@ const Index = () => {
                     title: event.title,
                     description: event.description,
                     dateTime: event.dateTime,
-                    image: event.image,
                 }
             })
             .then(response => {
@@ -45,7 +44,7 @@ const Index = () => {
                     classes="form__input"
                     required={true}
                     placeholder="Title"
-                    handleChange={(e) => setEvent({ ...event, title: e.target.value })}
+                    handleChange={(e) => setEvent({ ...event, title: e.target.value})}
                 />
                 <Input
                     label="Description"
@@ -66,16 +65,6 @@ const Index = () => {
                     required={true}
                     placeholder="date"
                     handleChange={(e) => setEvent({ ...event, dateTime: e.target.value })}
-                />
-                <Input
-                    label="image"
-                    name="image"
-                    id="image"
-                    type="file"
-                    classes="image"
-                    required={true}
-                    placeholder="image"
-                    handleChange={(e) => setEvent({ ...event, image: e.target.value })}
                 />
                 <Button title="Create" classes="btn btn__color-black" type="submit" />
             </form>
