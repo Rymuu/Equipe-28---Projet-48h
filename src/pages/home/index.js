@@ -7,9 +7,7 @@ const Index = () => {
 
   return (
     <div className="page__home" >
-      {
-    document.body.style.backgroundColor = "red"
-}
+
       <Carousel>
         <Carousel.Item>
           <img
