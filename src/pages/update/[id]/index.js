@@ -9,6 +9,7 @@ const Index = () => {
   const router = useRouter();
   const [event, setEvent] = useState();
   const id = router.query.id;
+  
 
   const updateEvent = (e) => {
     axios
