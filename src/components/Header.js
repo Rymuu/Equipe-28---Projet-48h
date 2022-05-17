@@ -35,6 +35,7 @@ const Header = () => {
   }
 
   return (
+    
     <>
       <Navbar bg="dark" variant="dark">
         <Container>
@@ -71,6 +72,10 @@ const Header = () => {
 
           </Nav>
         </Container>
+        <div class="research_bar">
+    <input class="research_bar" type="text" placeholder="Search" aria-label="Search" 
+    ></input>
+  </div>
       </Navbar >
       <br />
     </>
