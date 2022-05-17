@@ -3,7 +3,7 @@ import Link from "next/link";
 import Button from "../components/Button";
 import { useRouter } from "next/router";
 import axios from 'axios';
-import Kirby from "../public/kirby-2.jpg";
+import ReunionImg from "../public/reunion.webp";
 
 
 const Card = (props) => {
@@ -30,7 +30,7 @@ const Card = (props) => {
     return (
         <div className="event__card">
             <div className="event__img">
-                <img src={Kirby.src} alt={props.event.attributes.title} />
+                <img src={ReunionImg.src} alt={props.event.attributes.title} />
             </div>
             <div className="event__data">
                 <h1 className="text__center">{props.event.attributes.title}</h1>
