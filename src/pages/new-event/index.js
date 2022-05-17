@@ -7,19 +7,18 @@ import withAuth from "../../HOC/withAuth";
 
 const Index = () => {
     const [event, setEvent] = useState();
-    const createEvent = async (e) => {
-        let jwt = await localStorage.getItem('jwt');
+    const createEvent = (e) => {
+        let jwt = localStorage.getItem('jwt');
         console.log(jwt);
-        axios({
-                method: 'POST',
-                url:'http://localhost:1337/api/events', 
+        axios
+            .post('http://localhost:1337/api/events', {
                 headers: {
-                    Authorization: `Bearer ${jwt}`
+                    "Authorization": `Bearer ${jwt}`
                 },
                 data: {
                     title: event.title,
                     description: event.description,
-                    dateTime: event.dateTime
+                    dateTime: event.dateTime,
                 }
             })
             .then(response => {
