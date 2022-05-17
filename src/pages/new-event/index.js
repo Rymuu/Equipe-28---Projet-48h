@@ -3,6 +3,7 @@ import Input from "../../components/Input";
 import Button from "../../components/Button";
 import { useRouter } from 'next/router';
 import axios from "axios";
+import withAuth from "../../HOC/withAuth";
 
 const Index = () => {
     const [event, setEvent] = useState();
@@ -44,7 +45,7 @@ const Index = () => {
                     classes="form__input"
                     required={true}
                     placeholder="Title"
-                    handleChange={(e) => setEvent({ ...event, title: e.target.value})}
+                    handleChange={(e) => setEvent({ ...event, title: e.target.value })}
                 />
                 <Input
                     label="Description"
@@ -72,4 +73,4 @@ const Index = () => {
     );
 };
 
-export default Index;
+export default withAuth(Index);

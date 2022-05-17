@@ -4,7 +4,7 @@ import Card from '../components/Card';
 import eventService from '../services/event.service';
 
 export default function Home() {
-  const [events, setEvents, users] = useState();
+  const [events, setEvents] = useState();
 
   useEffect(() => {
     eventService.getEvents()

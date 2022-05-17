@@ -1,14 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState, useEffect } from "react";
 import Card from 'C:/Users/Sutri/Projects/YnovGestionEvent/src/components/Card.js';
-import eventService from '../../services/event.service';
-import withAuth from '../../HOC/withAuth';
+import eventService from '../../../services/event.service';
 
-const Index = () => {
+
+export default function Home() {
     const [events, setEvents] = useState();
-
-
-
 
     useEffect(() => {
         eventService.getEvents()
@@ -30,4 +27,3 @@ const Index = () => {
         </div>
     )
 }
-export default withAuth(Index);

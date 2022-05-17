@@ -42,11 +42,15 @@ const Header = () => {
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/event">Event</Nav.Link>
-            <Nav.Link href="/admin">Admin</Nav.Link>
-            <NavDropdown title="Events" id="nav-dropdown">
-              <NavDropdown.Item eventKey="4.1" href="/new-event">Create an event</NavDropdown.Item>
+            <NavDropdown title="Admin" id="nav-dropdown">
+              <NavDropdown.Item eventKey="4.1" href="/admin/users">Moderate Users</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item eventKey="4.2" href="/my-events">My events</NavDropdown.Item>
+              <NavDropdown.Item eventKey="4.2" href="/admin/events">Moderate Events</NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="Events" id="nav-dropdown">
+              <NavDropdown.Item eventKey="4.1" href="/new-event">Create An Event</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item eventKey="4.2" href="/my-events">My Events</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav className="justify-content-end flex-grow-1 pe-3">

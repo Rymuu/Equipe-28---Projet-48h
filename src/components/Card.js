@@ -27,9 +27,23 @@ const Card = (props) => {
                 <p>{props.event.attributes.description}</p>
             </div>
             <Button title="Learn more" function={() => router.push(`/event/${props.event.id}`)} type="button" classes="btn btn__color-black" />
-            {router.asPath === "/my-events" ?
+            {router.asPath === "/my-events" || router.asPath === "/admin/events" ?
                 (
-                    <Button title="Delete" function={() => deleteEvent(props.event.id)} type="button" classes="btn btn__color-black" />
+                    <>
+                    {router.asPath === "/my-events" ?
+                    (
+                        <Button title="Delete" function={() => deleteEvent(props.event.id)} type="button" classes="btn btn__color-black" />
+                    )
+                    :
+                    (
+                        <>
+                        <Button title="Delete" function={() => deleteEvent(props.event.id)} type="button" classes="btn btn__color-black" />
+                        <Button title="Update" function={() => router.push(`/update/${props.event.id}`)} type="button" classes="btn btn__color-black" />
+                        </>
+                    )
+                }
+                        
+                    </>
                 )
                 :
                 (
