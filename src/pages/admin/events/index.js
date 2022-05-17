@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState, useEffect } from "react";
-import Card from 'C:/Users/Sutri/Projects/YnovGestionEvent/src/components/Card.js';
+import Card from '../../../components/Card';
 import eventService from '../../../services/event.service';
 
 
