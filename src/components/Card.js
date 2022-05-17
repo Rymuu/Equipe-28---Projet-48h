@@ -33,7 +33,7 @@ const Card = (props) => {
                 <img src={ReunionImg.src} alt={props.event.attributes.title} />
             </div>
             <div className="event__data">
-                <h1 className="text__center">{props.event.attributes.title}</h1>
+                <h2 className="text__center">{props.event.attributes.title}</h2>
                 <p>{props.event.attributes.description}</p>
             </div>
             <Button title="Learn more" function={() => router.push(`/event/${props.event.id}`)} type="button" classes="btn btn__color-black" />
