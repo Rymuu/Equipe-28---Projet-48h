@@ -5,6 +5,8 @@ import eventService from '../services/event.service';
 
 export default function Home() {
   const [events, setEvents] = useState();
+ 
+ 
 
   useEffect(() => {
     eventService.getEvents()
