@@ -11,17 +11,24 @@
         margin: 20px;
         grid-column: span 1;
         grid-row: span 1;
+        border-radius: 4px;
+
+        &:hover {
+            border: 4px solid rgb(68, 68, 68);
+            border-radius: 4px;
+        }
 
         .event__img {
             img {
                 cursor: pointer;
                 width: 100%;
-                height: 400px;
+                height: 200px;
             }
         }
 
         .event__data {
             margin-left: 20px;
+
             h2 {
                 font-size: 15px;
             }
