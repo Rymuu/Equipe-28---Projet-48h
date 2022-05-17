@@ -7,7 +7,7 @@ const withAuth = (WrappedComponent) => {
         const [authVerified, setAuthVerified] = useState(false);
         
         useEffect(() => {
-          const token = localStorage.getItem('token');
+          const token = localStorage.getItem('jwt');
           if (!token) {
               Router.push('/login')
           }

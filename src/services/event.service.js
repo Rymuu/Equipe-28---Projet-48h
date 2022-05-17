@@ -8,5 +8,6 @@ export default {
     getEvent(id) {
         return fetch(`${apiUrl}/events/${id}?populate=image`)
         .then((res) => res.json())
-    }
+    },
+    
 }

@@ -3,6 +3,7 @@ import Input from "../../components/Input";
 import Button from "../../components/Button";
 import { useRouter } from 'next/router';
 import axios from "axios";
+import userService from "../../services/user.services";
 
 const Index = () => {
 
@@ -17,12 +18,18 @@ const Index = () => {
       .then(response => {
         // Handle success.
         console.log(e);
+        console.log("reponse : ", response);
         console.log('User profile', response.data.user);
         console.log('User token', response.data.jwt);
         localStorage.setItem("jwt", response.data.jwt);
         console.log("success !");
-        router.push("/");
-
+        //router.push("/");
+        userService.getMe(localStorage.getItem('jwt'))
+          .then(data => {
+            console.log("result : ", data);
+            setUser(data);
+          })
+          .catch(err => console.log(err));
 
       })
       .catch(error => {

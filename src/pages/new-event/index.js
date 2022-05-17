@@ -7,20 +7,26 @@ import withAuth from "../../HOC/withAuth";
 
 const Index = () => {
     const [event, setEvent] = useState();
-    const createEvent = (e) => {
-        axios
-            .post('http://localhost:1337/api/events', {
-                "data": {
+    const createEvent = async (e) => {
+        let jwt = await localStorage.getItem('jwt');
+        console.log(jwt);
+        axios({
+                method: 'POST',
+                url:'http://localhost:1337/api/events', 
+                headers: {
+                    Authorization: `Bearer ${jwt}`
+                },
+                data: {
                     title: event.title,
                     description: event.description,
-                    dateTime: event.dateTime,
+                    dateTime: event.dateTime
                 }
             })
             .then(response => {
                 // Handle success.
                 if (response.data.error) {
                 } else {
-
+                    console.log("created");
                 }
 
             })
@@ -30,7 +36,7 @@ const Index = () => {
             });
         console.log(e);
         e.preventDefault();
-        console.log("created");
+
         console.log(event);
     }
 
